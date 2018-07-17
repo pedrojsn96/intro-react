@@ -1,22 +1,28 @@
 import React, { Component } from 'react'
-import { StyleSheet, AppRegistry, Text, View, FlatList, Image } from 'react-native';
+import { StyleSheet, AppRegistry, Text, View, FlatList, Image, Alert, TouchableOpacity } from 'react-native';
 
 
 export default class App extends Component {
+  onPress(item){
+    Alert.alert(item);
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <FlatList
           data={[
-            {name: 'Vinicius Cardoso', course: 'Sistemas de Informação', photo: 'https://cdn1.iconfinder.com/data/icons/occupations-3/100/21-512.png', bio: 'Professor de Engenharia de Software'},
-            {name: 'Carla Silva', course: 'Sistemas de Informação', photo: 'https://cdn3.iconfinder.com/data/icons/education-5-2/256/Teacher-512.png', bio: 'Professor de Engenharia de Software'}
+            {id: 1, name: 'Vinicius Cardoso', course: 'Engenharia de Software', photo: 'https://cdn1.iconfinder.com/data/icons/occupations-3/100/21-512.png', bio: 'Professor de Engenharia de Software'},
+            {id: 2, name: 'Carla Silva', course: 'Sistemas de Informação', photo: 'https://cdn3.iconfinder.com/data/icons/education-5-2/256/Teacher-512.png', bio: 'Professor de Engenharia de Software'}
           ]}
           renderItem={
             ({item}) => 
-            <View style={styles.itemView}>
-              <Image source={{ uri: item.photo}} style={styles.photo}/>
-              <Text style={styles.itemList}>{item.name}</Text>
-            </View>
+            <TouchableOpacity onPress={() => this.onPress(item.course)}>  
+              <View style={styles.itemView}>
+                <Image source={{ uri: item.photo}} style={styles.photo}/>
+                <Text style={styles.itemList}>{item.name}</Text>
+              </View>
+            </TouchableOpacity>
           }
         >
         </FlatList>
@@ -47,11 +53,6 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     borderRadius: 20,
-  },
-  separator: {
-    flex: 1,
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: '#8E8E8E',
   }
 });
 
