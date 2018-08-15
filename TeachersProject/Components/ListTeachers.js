@@ -10,9 +10,9 @@ import {
 } from 'react-native';
 
 class ListTeachers extends Component {
-    onPress(item){
-        Alert.alert(item);
-      }
+    static navigationOptions = {
+        title: 'Teachers List',
+      };
 
     render() {
         return (
@@ -23,7 +23,9 @@ class ListTeachers extends Component {
                 ]}
                 renderItem={
                     ({item}) => 
-                    <TouchableOpacity onPress={() => this.onPress(item.course)}>  
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail', {
+                        item: item
+                    })}>  
                     <View style={styles.itemView}>
                         <Image source={{ uri: item.photo}} style={styles.photo}/>
                         <Text style={styles.itemList}>{item.name}</Text>

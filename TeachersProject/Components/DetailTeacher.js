@@ -7,19 +7,23 @@ import {
 } from 'react-native';
 
 class DetailTeacher extends Component {
-    teacher = {id: 1, name: 'Vinicius Cardoso', course: 'Engenharia de Software', photo: 'https://cdn1.iconfinder.com/data/icons/occupations-3/100/21-512.png', bio: 'Professor de Engenharia de Software'};
+    static navigationOptions = {
+        title: 'Teacher Details',
+      };
     render() {
+        const { navigation } = this.props;
+        const teacher  = navigation.getParam('item');
         return (
             <View style={styles.container}>
                 <View style={styles.img}>
                     <Image style={styles.photo}
-                        source={{uri: this.teacher.photo}}
+                        source={{uri: teacher.photo}}
                     />
                 </View>
                 <View style={styles.contentTitle}><Text style={{fontSize:20}}>Nome</Text></View>
-                <Text style={styles.name}>{this.teacher.name}</Text>
+                <Text style={styles.name}>{teacher.name}</Text>
                 <View style={styles.contentTitle}><Text style={{fontSize:20}}>Bio</Text></View>
-                <Text style={styles.bio}>{this.teacher.bio}</Text>
+                <Text style={styles.bio}>{teacher.bio}</Text>
             </View>
         );
     }
