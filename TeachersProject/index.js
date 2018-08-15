@@ -5,14 +5,14 @@ import {
   View 
 } from 'react-native';
 
-import ListTearchers from './Components/ListTeachers'
-
+import ListTeachers from './Components/ListTeachers'
+import DetailTeacher from './Components/DetailTeacher'
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ListTearchers />
+        <DetailTeacher />
       </View>
     );
   }
