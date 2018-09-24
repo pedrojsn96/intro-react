@@ -32,6 +32,7 @@ class ListTeachers extends Component {
                     </View>
                     </TouchableOpacity>
                 }
+                accessibilityLabel= {"TeachersList"}
                 >
         </FlatList>
         );
