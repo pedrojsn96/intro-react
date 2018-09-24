@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "android:debug": "cd android/ && ./gradlew clean && cd .. && react-native run-android",
+    "android:release": "cd android && ./gradlew assembleRelease" 
   },
   "dependencies": {
     "react": "^16.4.2",
