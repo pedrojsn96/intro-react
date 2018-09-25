@@ -7,4 +7,4 @@ Feature: Main Feature
   Scenario: Teacher Detail
     Given the app has launched
     When I press some teacher
-    Then I go to teacher detail
+    Then I go to teacher details

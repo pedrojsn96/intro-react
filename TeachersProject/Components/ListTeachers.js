@@ -25,7 +25,8 @@ class ListTeachers extends Component {
                     ({item}) => 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail', {
                         item: item
-                    })}>  
+                    })}
+                    accessibilityLabel= {"TeacherItem"}>  
                     <View style={styles.itemView}>
                         <Image source={{ uri: item.photo}} style={styles.photo}/>
                         <Text style={styles.itemList}>{item.name}</Text>
