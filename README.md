@@ -1,3 +1,3 @@
 # TeacherProject
 
-Esse projeto está notificando no slack
+Esse projeto está integrado com o Slack
