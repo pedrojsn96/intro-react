@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('NPM SETTING') {
       steps {
+        sh 'cd TeachersProject/'
         sh 'npm install'
       }
     }
@@ -23,7 +24,7 @@ pipeline {
     }
     stage('DELIVERY') {
       steps {
-        emailext(subject: 'TeacherProject', body: 'Segue o build', from: 'pjsn@cin.ufpe.br', to: 'pjsn@cin.ufpe.br')
+        emailext(subject: 'TeacherProject', body: 'Segue o build', from: 'pjsn@cin.ufpe.br', to: 'pjsn@cin.ufpe.br', compressLog: true, attachLog: true, attachmentsPattern: 'jlkj')
       }
     }
   }
