@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('NPM SETTING') {
       steps {
+        sh 'ruby -v'
         sh 'cd TeachersProject/'
         sh 'npm install'
       }
