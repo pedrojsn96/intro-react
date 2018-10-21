@@ -13,25 +13,29 @@ npm install'''
       steps {
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
-pwd
 cd TeachersProject
-pwd
 npm run android:debug'''
       }
     }
     stage('ANDROID TESTS') {
       steps {
+        sh '''#!/usr/local/bin/zsh
+source $HOME/.zshrc
+cd TeachersProject'''
         echo 'EXECUTA OS TESTES'
       }
     }
     stage('ANDROID RELEASE') {
       steps {
-        sh '''pwd
+        sh '''#!/usr/local/bin/zsh
+source $HOME/.zshrc
+cd TeachersProject
 npm run android:release'''
       }
     }
     stage('DELIVERY') {
       steps {
+        echo 'CHEGAMOS AO FIM'
         emailext(subject: 'TeacherProject', body: 'Segue o build', from: 'pjsn@cin.ufpe.br', to: 'pjsn@cin.ufpe.br', compressLog: true, attachLog: true, attachmentsPattern: 'jlkj')
       }
     }
