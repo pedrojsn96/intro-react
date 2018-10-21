@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('NPM SETTING') {
       steps {
-        sh '''
+        sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
 
 '''
