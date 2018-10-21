@@ -3,7 +3,6 @@ pipeline {
   stages {
     stage('NPM SETTING') {
       steps {
-        sh 'node -v'
         sh 'cd TeachersProject/'
         sh 'npm install'
       }
