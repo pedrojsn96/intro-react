@@ -6,7 +6,7 @@ pipeline {
         sh '''echo $PATH
 
 echo "pedro"'''
-        sh 'export PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/loca/bin'
+        sh 'export PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin'
         sh 'cd TeachersProject/'
         sh 'npm install'
       }
