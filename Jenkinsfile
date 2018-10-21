@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('NPM SETTING') {
       steps {
+        sh 'export PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/loca/bin'
         sh 'cd TeachersProject/'
         sh 'npm install'
       }
