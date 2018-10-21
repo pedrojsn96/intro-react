@@ -6,9 +6,11 @@ pipeline {
         sh '''
 source $HOME/.zshrc
 
-cd TeachersProject/
+'''
+        sh '''cd TeachersProject/
 
-npm install'''
+'''
+        sh 'npm install'
       }
     }
     stage('ANDROID BUILD DEBUG') {
