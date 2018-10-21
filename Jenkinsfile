@@ -13,6 +13,9 @@ npm install'''
       steps {
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
+pwd
+cd TeachersProject
+pwd
 npm run android:debug'''
       }
     }
@@ -23,7 +26,8 @@ npm run android:debug'''
     }
     stage('ANDROID RELEASE') {
       steps {
-        sh 'npm run android:release'
+        sh '''pwd
+npm run android:release'''
       }
     }
     stage('DELIVERY') {
