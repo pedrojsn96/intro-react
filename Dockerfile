@@ -27,5 +27,18 @@ RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A170311380
     && source ~/.rvm/scripts/rvm \
     && rvm install ruby --default \
     && gem install bundler
+# install sdk
+RUN export ANDROID_HOME=/opt/android-sdk-linux \
+    && sudo mkdir -p $ANDROID_HOME \
+    && cd $ANDROID_HOME \
+    && sudo wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip \
+    && apt-get install unzip \
+    && sudo unzip sdk-tools-linux-4333796.zip \
+    && cd tools \
+    && sudo ./android update sdk --no-ui \
+    && echo "export ANDROID_HOME='/opt/android-sdk-linux'" >>~/.profile \
+    && echo "export PATH='$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH'" >>~/.profile \
+    && source ~/.profile \
+    && sudo chmod -R 755 /opt/android-sdk-linux 
 # drop back to the regular jenkins user - good practice
 USER jenkins
