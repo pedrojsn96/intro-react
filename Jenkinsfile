@@ -11,7 +11,9 @@ npm install'''
     }
     stage('ANDROID BUILD DEBUG') {
       steps {
-        sh 'npm run android:debug'
+        sh '''#!/usr/local/bin/zsh
+source $HOME/.zshrc
+npm run android:debug'''
       }
     }
     stage('ANDROID TESTS') {
