@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('NPM SETTING') {
       steps {
+        sh 'source ~/.bash_profile'
         sh 'cd TeachersProject/'
         sh 'npm install'
       }
