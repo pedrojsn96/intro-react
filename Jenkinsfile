@@ -36,7 +36,7 @@ npm run android:release'''
     stage('DELIVERY') {
       steps {
         echo 'CHEGAMOS AO FIM'
-        emailext(subject: 'TeacherProject', body: 'Segue o build', from: 'pjsn@cin.ufpe.br', to: 'pjsn@cin.ufpe.br', compressLog: true, attachLog: true, attachmentsPattern: 'jlkj')
+        slackSend(baseUrl: 'https://pedrocompany.slack.com/services/hooks/jenkins-ci/', channel: 'jenkins-notifications', token: '2LpDh91ZUFjnvG6NdwYHAQsx', message: 'PIPELINE JENKINS')
       }
     }
   }
