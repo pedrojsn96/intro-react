@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android:tests": "cd .. && calabash-android run TeachersProject/android/app/build/outputs/apk/app-debug.apk", 
-    "android:debug": "cd android/ && ./gradlew clean && cd .. && react-native run-android",
+    "android:exec": "cd android/ && ./gradlew clean && cd .. && react-native run-android",
+    "android:debug": "cd android/ && ./gradlew assembleDebug",
     "android:release": "cd android && ./gradlew assembleRelease" 
   },
   "dependencies": {
