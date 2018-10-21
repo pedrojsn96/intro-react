@@ -5,12 +5,8 @@ pipeline {
       steps {
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
-
-'''
-        sh '''cd TeachersProject/
-
-'''
-        sh 'npm install'
+cd TeachersProject/
+npm install'''
       }
     }
     stage('ANDROID BUILD DEBUG') {
