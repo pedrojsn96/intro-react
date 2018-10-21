@@ -1,13 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('NPM SETTING') {
-      steps {
-        sh 'source ~/.bash_profile'
-        sh 'cd TeachersProject/'
-        sh 'npm install'
-      }
-    }
+    withEnv(['PATH+NODE=/something=/path/to/node/bin']) {
+      stage('NPM SETTING') {
+          steps {
+            sh 'cd TeachersProject/'
+            sh 'npm install'
+          }
+        }
+     }
     stage('ANDROID BUILD DEBUG') {
       steps {
         sh 'npm run android:debug'
