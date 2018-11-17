@@ -41,6 +41,7 @@ $ react-native run-android
 | Android Sdk | 26.0.3 |
 | react-native-cli | 2.0.1 | 
 | react-native | 0.55.4 |
+| calabash-android | 0.9.7 |
 
 License
 ----
