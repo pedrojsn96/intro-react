@@ -21,7 +21,8 @@ npm run android:debug'''
       steps {
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
-cd TeachersProject'''
+cd TeachersProject
+npm run android:tests'''
         echo 'EXECUTA OS TESTES'
       }
     }
@@ -35,8 +36,7 @@ npm run android:release'''
     }
     stage('DELIVERY') {
       steps {
-        echo 'CHEGAMOS AO FIM'
-        slackSend(baseUrl: 'https://pedrocompany.slack.com/services/hooks/jenkins-ci/', channel: 'jenkins-notifications', token: '2LpDh91ZUFjnvG6NdwYHAQsx', message: 'PIPELINE JENKINS')
+        slackSend(baseUrl: 'https://pedrocompany.slack.com/services/hooks/jenkins-ci/', channel: 'jenkins-notifications', token: '2LpDh91ZUFjnvG6NdwYHAQsx', message: 'CI/CD PIPELINE')
         build 'testfairy'
       }
     }
