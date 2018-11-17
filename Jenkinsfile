@@ -1,10 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('NPM SETTING') {
+    stage('SETTINGS') {
       steps {
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
+bundle install
 cd TeachersProject/
 npm install'''
       }
