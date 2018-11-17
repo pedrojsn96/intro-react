@@ -1,6 +1,6 @@
 # Universidade Federal de Pernambuco
 
-##### Integração e Entrega Contínua para aplicações móveis desenvolvidas em React Native
+## Integração e Entrega Contínua para aplicações móveis desenvolvidas em React Native
 
 ### Aluno: Pedro José de Souza Neto
 
