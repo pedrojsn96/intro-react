@@ -45,6 +45,6 @@ npm run android:release'''
     }
   }
   triggers {
-    pollSCM('H 15 23 * * 1-5')
+    pollSCM('H */4 * * 1-7')
   }
 }
