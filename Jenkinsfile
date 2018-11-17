@@ -5,8 +5,7 @@ pipeline {
       steps {
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
-sudo gem install bundler
-bundle install
+
 cd TeachersProject/
 npm install'''
       }
@@ -21,12 +20,10 @@ npm run android:debug'''
     }
     stage('ANDROID TESTS') {
       steps {
-        sh 'calabash-android run TeachersProject/android/app/build/outputs/apk/app-debug.apk'
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
 cd TeachersProject
 npm run android:tests'''
-        echo 'EXECUTA OS TESTES'
       }
     }
     stage('ANDROID RELEASE') {
