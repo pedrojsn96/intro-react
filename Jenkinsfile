@@ -3,9 +3,9 @@ pipeline {
   stages {
     stage('SETTINGS') {
       steps {
+        sh 'bundle install'
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
-bundle install
 cd TeachersProject/
 npm install'''
       }
@@ -20,6 +20,7 @@ npm run android:debug'''
     }
     stage('ANDROID TESTS') {
       steps {
+        sh 'calabash-android run TeachersProject/android/app/build/outputs/apk/app-debug.apk'
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
 cd TeachersProject
