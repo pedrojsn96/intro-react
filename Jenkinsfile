@@ -24,6 +24,7 @@ npm run android:debug'''
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
 source "$HOME/.rvm/scripts/rvm"
+calabash-android resign TeachersProject/android/app/build/outputs/apk/app-debug.apk
 cd TeachersProject
 npm run android:tests'''
       }
