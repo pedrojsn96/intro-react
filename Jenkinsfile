@@ -5,7 +5,8 @@ pipeline {
       steps {
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
-
+source "$HOME/.rvm/scripts/rvm"
+bundle install
 cd TeachersProject/
 npm install'''
       }
@@ -22,6 +23,7 @@ npm run android:debug'''
       steps {
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
+source "$HOME/.rvm/scripts/rvm"
 cd TeachersProject
 npm run android:tests'''
       }
