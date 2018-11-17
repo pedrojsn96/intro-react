@@ -6,6 +6,8 @@ pipeline {
         sh 'bundle install'
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
+gem install bundler
+bundle install
 cd TeachersProject/
 npm install'''
       }
