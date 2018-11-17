@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('SETTINGS') {
       parallel {
-        stage('SETTINGS') {
+        stage('BUNDLE INSTALL') {
           steps {
             sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
@@ -11,7 +11,7 @@ source "$HOME/.rvm/scripts/rvm"
 bundle install'''
           }
         }
-        stage('') {
+        stage('NPM INSTALL') {
           steps {
             sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
