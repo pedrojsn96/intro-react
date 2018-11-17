@@ -2,13 +2,23 @@ pipeline {
   agent any
   stages {
     stage('SETTINGS') {
-      steps {
-        sh '''#!/usr/local/bin/zsh
+      parallel {
+        stage('SETTINGS') {
+          steps {
+            sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
 source "$HOME/.rvm/scripts/rvm"
-bundle install
+bundle install'''
+          }
+        }
+        stage('') {
+          steps {
+            sh '''#!/usr/local/bin/zsh
+source $HOME/.zshrc
 cd TeachersProject/
 npm install'''
+          }
+        }
       }
     }
     stage('ANDROID BUILD DEBUG') {
