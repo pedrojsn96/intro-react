@@ -3,7 +3,6 @@ pipeline {
   stages {
     stage('SETTINGS') {
       steps {
-        sh 'bundle install'
         sh '''#!/usr/local/bin/zsh
 source $HOME/.zshrc
 gem install bundler
