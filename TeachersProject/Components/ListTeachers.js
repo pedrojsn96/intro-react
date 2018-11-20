@@ -18,8 +18,8 @@ class ListTeachers extends Component {
         return (
             <FlatList
                 data={[
-                    {id: 1, name: 'Vinicius Cardoso', course: 'Engenharia de Software', photo: 'https://cdn1.iconfinder.com/data/icons/occupations-3/100/21-512.png', bio: 'Professor de Engenharia de Software'},
-                    {id: 2, name: 'Carla Silva', course: 'Sistemas de Informação', photo: 'https://cdn3.iconfinder.com/data/icons/education-5-2/256/Teacher-512.png', bio: 'Professor de Engenharia de Software'}
+                    {id: 1, name: 'Vinicius Cardoso', course: 'Engenharia de Software', photo: 'https://media.licdn.com/dms/image/C5603AQGfWDdWaunxkw/profile-displayphoto-shrink_800_800/0?e=1548288000&v=beta&t=WbtQ1BBUixZPr0BoyA2q-nqtLi6P9q-SfCPkO9ZnE9Q', bio: 'Professor de Engenharia de Software'},
+                    {id: 2, name: 'Kiev Gama', course: 'Sistemas de Informação', photo: 'https://media.licdn.com/dms/image/C5603AQGqJCau3TaI9Q/profile-displayphoto-shrink_800_800/0?e=1548288000&v=beta&t=524VNymqQVl57TNiIh1crS-RGb_H9VFZPA442bdezDY', bio: 'Professor de Engenharia de Software'}
                 ]}
                 renderItem={
                     ({item}) => 
