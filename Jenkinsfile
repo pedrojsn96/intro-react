@@ -6,17 +6,17 @@ pipeline {
         stage('BUNDLE INSTALL') {
           steps {
             sh '''#!/usr/local/bin/zsh
-source $HOME/.zshrc
-source "$HOME/.rvm/scripts/rvm"
-bundle install'''
+              source $HOME/.zshrc
+              source "$HOME/.rvm/scripts/rvm"
+              bundle install'''
           }
         }
         stage('NPM INSTALL') {
           steps {
             sh '''#!/usr/local/bin/zsh
-source $HOME/.zshrc
-cd TeachersProject/
-npm install'''
+              source $HOME/.zshrc
+              cd TeachersProject/
+              npm install'''
           }
         }
       }
@@ -24,27 +24,27 @@ npm install'''
     stage('ANDROID BUILD DEBUG') {
       steps {
         sh '''#!/usr/local/bin/zsh
-source $HOME/.zshrc
-cd TeachersProject
-npm run android:debug'''
+          source $HOME/.zshrc
+          cd TeachersProject
+          npm run android:debug'''
       }
     }
     stage('ANDROID TESTS') {
       steps {
         sh '''#!/usr/local/bin/zsh
-source $HOME/.zshrc
-source "$HOME/.rvm/scripts/rvm"
-calabash-android resign TeachersProject/android/app/build/outputs/apk/app-debug.apk
-cd TeachersProject
-npm run android:tests'''
+          source $HOME/.zshrc
+          source "$HOME/.rvm/scripts/rvm"
+          calabash-android resign TeachersProject/android/app/build/outputs/apk/app-debug.apk
+          cd TeachersProject
+          npm run android:tests'''
       }
     }
     stage('ANDROID RELEASE') {
       steps {
         sh '''#!/usr/local/bin/zsh
-source $HOME/.zshrc
-cd TeachersProject
-npm run android:release'''
+          source $HOME/.zshrc
+          cd TeachersProject
+          npm run android:release'''
       }
     }
     stage('DELIVERY') {
@@ -55,6 +55,6 @@ npm run android:release'''
     }
   }
   triggers {
-    pollSCM('H */4 * * 1-7')
+    pollSCM('H */12 * * 1-5')
   }
 }
