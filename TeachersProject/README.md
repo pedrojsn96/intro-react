@@ -16,7 +16,7 @@ O objetivo deste trabalho é o estudo e a implementação de uma pipeline de int
 
 * [React Native] 
 * [Jenkins]
-* [Bluen Ocean]
+* [Blue Ocean]
 * [Slack]
 * [TestFairy]
 
