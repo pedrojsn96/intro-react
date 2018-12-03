@@ -40,7 +40,7 @@ $ react-native run-android
 | ruby | 2.5.1 |
 | Android Sdk | 26.0.3 |
 | react-native-cli | 2.0.1 | 
-| react-native | 0.55.4 |
+| react-native | 0.55.2 |
 | calabash-android | 0.9.7 |
 
 License
