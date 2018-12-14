@@ -28,6 +28,7 @@ pipeline {
       steps {
         sh '''#!/usr/local/bin/zsh
           source $HOME/.zshrc
+          node --version
           cd TeachersProject
           npm run android:debug'''
       }
@@ -37,6 +38,7 @@ pipeline {
         sh '''#!/usr/local/bin/zsh
           source $HOME/.zshrc
           source "$HOME/.rvm/scripts/rvm"
+          node --version
           calabash-android resign TeachersProject/android/app/build/outputs/apk/app-debug.apk
           cd TeachersProject
           npm run android:tests'''
