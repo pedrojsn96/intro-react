@@ -15,6 +15,9 @@ pipeline {
           steps {
             sh '''#!/usr/local/bin/zsh
               source $HOME/.zshrc
+              node --version
+              nvm use 6.9.1
+              nvm use 6.9.1
               cd TeachersProject/
               npm install'''
           }
